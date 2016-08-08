@@ -14,7 +14,7 @@ if(isset($_POST['email']))
 $email =$_POST['email'];
 if(isset($_POST['dept']))
 $dept = $_POST['dept'];
-$strSQL = "INSERT into tbl_EmployeeDetails(employee_name,employee_email_id,department) VALUES ('$firstname','$email','$Email','$dept')";
+$strSQL = "INSERT into tbl_EmployeeDetails(employee_name,employee_email_id,department) VALUES ('$firstname','$email','$dept')";
 echo $strSQL;
 
 $query = mysqli_query($con, $strSQL);
