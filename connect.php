@@ -1,10 +1,11 @@
 <?php
-    include_once 'config.php';
-    try{
-        $conn=new PDO(DATABASE_TYPE."host=".SERVER.";dbname=".DATABASE, USERNAME, PASSWORD);
-        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "ERROR:".$e->getMessage();
-    }
-    session_start();
+   $servername = "rds-server-team-03.ca5qg3gmjo0i.us-west-2.rds.amazonaws.com";
+$username = "team03";
+$password = "team123456";
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
 ?>
