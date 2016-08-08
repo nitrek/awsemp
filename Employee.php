@@ -26,13 +26,4 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-//SEARCHING DATA
-$sql = "SELECT * FROM tbl_EmployeeDetails WHERE emp_id = '$_POST["ID"]'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-*/
 ?>
