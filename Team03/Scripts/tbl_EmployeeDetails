@@ -1,0 +1,29 @@
+CREATE TABLE tbl_EmployeeDetails(
+emp_id INT NOT NULL AUTO_INCREMENT, 
+employee_name VARCHAR(30) NOT NULL,
+employee_email_id VARCHAR(255) NOT NULL,
+department VARCHAR(30) NOT NULL,
+primary key (emp_id));
+
+-----------------------------------------------------
+Crediantials:>>
+$servername = "rds-server-team-03.ca5qg3gmjo0i.us-west-2.rds.amazonaws.com";
+$username = "team03";
+$password = "team123456";
+$dbname = "employeedb";
+-----------------------------------------------------
+Searching by ID , NAME OR DEPARTMENT >>
+
+SELECT * FROM tbl_EmployeeDetails;
+SELECT * FROM tbl_EmployeeDetails WHERE emp_id = ''+?;
+SELECT * FROM tbl_EmployeeDetails WHERE employee_name = ''+?;
+SELECT * FROM tbl_EmployeeDetails WHERE department = ''+?;
+
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department,NOW()) VALUES ("Jhon",""jhon123@yahoo.com","IT",NOW());
+
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department )VALUES ("Jhon","jhon123@yahoo.com","IT");
+
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ("Sam","jhon123@yahoo.com","Facilities");
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ("Targerian","Targerian@yahoo.com","HR");
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ("Imp","Imp@yahoo.com","Sales");
+INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ("Khaleasi","Khaleasi@yahoo.com","Finence");
