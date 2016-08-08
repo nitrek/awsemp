@@ -1,0 +1,57 @@
+<html>
+<head>
+<script>
+function numbersonly(myfield, e, dec) { var key; var keychar; if (window.event) key = window.event.keyCode; else if (e) key = e.which; else return true; keychar = String.fromCharCode(key);  if ((key==null) || (key==0) || (key==8) || (key==9) || (key==13) || (key==27) ) return true; 
+ else if ((("0123456789").indexOf(keychar) > -1)) return true;  else if (dec && (keychar == ".")) { myfield.form.elements[dec].focus(); return false; } else return false; }
+ function validate() {
+ 	if (document.myForm.ID.value == "") {
+        alert("Enter a ID");
+        document.myForm.ID.focus();
+        return false;
+    }
+    if (document.myForm.firstname.value == "") {
+        alert("Enter a name");
+        document.myForm.firstname.focus();
+        return false;
+    }
+    if (document.myForm.email.value == "") {
+        alert("Enter a email ID");
+        document.myForm.email.focus();
+        return false;
+    }
+    if (!/^[a-zA-Z]*$/g.test(document.myForm.firstname.value)) {
+        alert("Invalid characters in firstname");
+        document.myForm.firstname.focus();
+        return false;
+    }
+     if(document.myForm.email.value!="")
+     {
+     	var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+     }
+}
+</script>
+</head>
+<form name="myForm" action="Employee.php" method="post" onsubmit="return validate()">
+  Employee ID:<br>
+  <input type="number" name="ID" onkeypress="return numbersonly(this, event)" required="true"><br>
+  Employee Name:<br>
+  <input type="text" name="firstname" required="true"><br>
+  Email id:<br>
+  <input type="email" name="email" required="true"><br>
+  Department:<br>
+  <select required="true">
+  <option value="IT">IT</option>
+  <option value="HR">HR</option>
+  <option value="Sales">Sales</option>
+  <option value="Finance">Finance</option>
+  <option value="Facilities">Facilities</option>
+  </select>
+     <input type="submit" value="Submit">
+</form>
+</html>
