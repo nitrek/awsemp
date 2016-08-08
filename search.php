@@ -14,7 +14,7 @@ if(isset($_POST["firstname"]))
 {
 	echo $_POST["firstname"];
 	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE employee_name =' "+$_POST["firstname"]+"' ";
-	$result =mysqli_query($conn, $qu)
+	$result =mysqli_query($conn, $qu);
 	echo var_dump($result);
 }
 if(isset($_POST["ID"]))
