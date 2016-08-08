@@ -4,10 +4,10 @@ $username = "team03";
 $password = "team123456";
 $dbname = "employeedb";
 
-$con = mysqli_connect($servername,$username,$password,$dbname) or die("Some error occurred during connection " . mysqli_error($con));  
+$con = mysql_connect($servername,$username,$password,$dbname) or die("Some error occurred during connection " . mysqli_error($con));  
 $strSQL = "INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ('".$_POST['firstname']."', '".$_POST['email']."', '".$_POST['dept']."')";
 echo $strSQL;
-$query = mysqli_query($con, $strSQL);
+$query = mysql_query($con, $strSQL);
 if($query)
 {
   echo "success";
