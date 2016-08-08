@@ -14,20 +14,20 @@ if(isset($_POST["firstname"]))
 {
 	echo $_POST["firstname"];
 	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE employee_name =' "+$_POST["firstname"]+"' ";
-	$result = $conn->query($qu);
+	$result =mysqli_query($conn, $qu)
 	echo var_dump($result);
 }
 if(isset($_POST["ID"]))
 {
 	echo $_POST["ID"];
 	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE emp_id ='"+ $_POST["ID"]+"' ";
-	$result = $conn->query($qu);
+	$result = mysqli_query($conn, $qu);
 	echo var_dump($result);
 }if(isset($_POST["dept"]))
 {
 	echo $_POST["firstname"];
 	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE emp_id ='"+ $_POST["ID"]+"' ";
-	$result = $conn->query($qu);
+	$result = mysqli_query($conn, $qu);
 	echo var_dump($result);
 }
 ?>
