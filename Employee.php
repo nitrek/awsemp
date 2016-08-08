@@ -8,7 +8,7 @@ $con = mysqli_connect($servername,$username,$password,$dbname) or die("Some erro
 $strSQL = "INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ('".$_POST['firstname']."', '".$_POST['email']."', '".$_POST['dept']."')";
 echo $strSQL;
 $query = mysqli_query($con, $strSQL);
-while($result)
+if($query)
 {
   echo "success";
 }
