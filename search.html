@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+<form name="myForm" action="search.php" method="post" onsubmit="return validate()">
+  Employee ID:<br>
+  <input type="number" name="ID" onkeypress="return numbersonly(this, event)" required="true"><br>
+  <input type="submit" value="Search">
+</form>
+<form name="myForm" action="Employee.php" method="post" onsubmit="return validate()">
+  Employee Name:<br>
+  <input type="text" name="firstname" required="true"><br>
+     <input type="submit" value="Search">
+</form>
+<form name="myForm" action="Employee.php" method="post" onsubmit="return validate()">
+  Department:<br>
+  <select name="dept" required="true">
+  <option value="IT">IT</option>
+  <option value="HR">HR</option>
+  <option value="Sales">Sales</option>
+  <option value="Finance">Finance</option>
+  <option value="Facilities">Facilities</option>
+  </select>
+     <input type="submit" value="Search">
+</form>
+</body>
+</html>
