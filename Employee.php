@@ -6,9 +6,10 @@ $dbname = "employeedb";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 echo "Connected successfully";
 
 echo $_POST["firstname"];
