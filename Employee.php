@@ -2,7 +2,9 @@
 $servername = "rds-server-team-03.ca5qg3gmjo0i.us-west-2.rds.amazonaws.com";
 $username = "team03";
 $password = "team123456";
+$dbname = "employeedb";
 
+$conn = mysqli_connect($servername,$username,$password,$dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -14,8 +16,7 @@ echo $_POST["ID"];
 echo $_POST["email"];
 echo $_POST["dept"];
 
-mysql_select_db( 'employeedb' );
-/*
+
 //INSERTING DATA
 $sql = "INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ($_POST["firstname"],$_POST["email"],$_POST["dept"]);";
 
