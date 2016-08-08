@@ -1,33 +1,46 @@
 <?php
-$servername = "rds-server-team-03.ca5qg3gmjo0i.us-west-2.rds.amazonaws.com";
-$username = "team03";
-$password = "team123456";
-$db = "employeedb";
-// Check connection
-$conn = mysqli_connect($servername,$username,$password,$db);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+require 'connect.php';
 if(isset($_POST["firstname"]))
 {
-	echo $_POST["firstname"];
-	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE employee_name =' "+$_POST["firstname"]+"' ";
-	$result = $conn->query($qu);
-	echo var_dump($result);
+	$firstname = $_POST["firstname"];
+	$qu = "SELECT * FROM emp_details WHERE name ='$firstname' ";
+	$result =mysqli_query($conn, $qu);
+		while($row = mysqli_fetch_assoc($result)){
+    foreach($row as $cname => $cvalue){
+        print "$cname: $cvalue\t";
+         print "\n";
+    }
+    echo "<br>";
 }
+}
+echo "<br>";
 if(isset($_POST["ID"]))
 {
-	echo $_POST["ID"];
-	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE emp_id ='"+ $_POST["ID"]+"' ";
-	$result = $conn->query($qu);
-	echo var_dump($result);
-}if(isset($_POST["dept"]))
+	//echo $_POST["ID"]+"ds";
+	$id = $_POST['ID'];
+	$qu = "SELECT * FROM emp_details WHERE id ='$id' ";
+	$result = mysqli_query($conn, $qu);
+	//echo $qu;
+	while($row = mysqli_fetch_assoc($result)){
+    foreach($row as $cname => $cvalue){
+        print "$cname: $cvalue\t";
+         print "\n";
+    }
+    echo "<br>";
+}
+}
+echo "<br>";
+if(isset($_POST["dept"]))
 {
-	echo $_POST["firstname"];
-	$qu = "SELECT * FROM tbl_EmployeeDetails WHERE emp_id ='"+ $_POST["ID"]+"' ";
-	$result = $conn->query($qu);
-	echo var_dump($result);
+	$dept = $_POST["dept"];
+	$qu = "SELECT * FROM emp_details WHERE dept ='$dept' ";
+	$result = mysqli_query($conn, $qu);
+		while($row = mysqli_fetch_assoc($result)){
+    foreach($row as $cname => $cvalue){
+        print "$cname: $cvalue\t";
+         print "\n";
+    }
+    echo "<br>";
+}
 }
 ?>

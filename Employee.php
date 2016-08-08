@@ -1,18 +1,23 @@
 <?php
-$servername = "rds-server-team-03.ca5qg3gmjo0i.us-west-2.rds.amazonaws.com";
-$username = "team03";
-$password = "team123456";
-$dbname = "employeedb";
-
-$con = mysqli_connect($servername,$username,$password,$dbname) or die("Some error occurred during connection " . mysqli_error($con));  
-$strSQL = "INSERT INTO tbl_EmployeeDetails(employee_name,employee_email_id,department ) VALUES ('".$_POST['firstname']."', '".$_POST['email']."', '".$_POST['dept']."')";
+require 'connect.php'; 
+$firstname ="test";
+$email = "test1";
+$dept = " dds";
+if(isset($_POST['firstname']))
+$firstname =$_POST['firstname'];
+if(isset($_POST['email']))
+$email =$_POST['email'];
+if(isset($_POST['dept']))
+$dept = $_POST['dept'];
+$strSQL = "INSERT into emp_details(name,email,dept) VALUES ('$firstname','$email','$dept')";
 echo $strSQL;
-$query = mysqli_query($con, $strSQL);
-while($result)
+
+$query = mysqli_query($conn, $strSQL);
+if($query)
 {
   echo "success";
 }
 
 // Close the connection
-mysqli_close($con);
+mysqli_close($conn);
 ?>
