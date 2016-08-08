@@ -14,5 +14,5 @@ if($query)
 }
 
 // Close the connection
-mysqli_close($con);
+mysql_close($con);
 ?>
